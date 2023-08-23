@@ -19,7 +19,9 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/list_view_test_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:divider="@color/cardview_light_background"
+        android:dividerHeight="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/list_view_test_text"

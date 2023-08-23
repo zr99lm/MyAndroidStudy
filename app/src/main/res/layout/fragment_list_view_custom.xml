@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListView.fragment.ArrayListViewTestFragment">
+    tools:context=".ListView.fragment.ListViewCustomFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <ListView
-        android:id="@+id/array_list_view_test"
+        android:id="@+id/custom_list_view_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@color/material_dynamic_primary10"
-        android:dividerHeight="1dp" />
-
+        android:divider="@color/cardview_light_background"
+        android:dividerHeight="2dp"
+        />
 </FrameLayout>

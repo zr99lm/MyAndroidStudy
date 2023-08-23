@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.zr.myapplication.ListView.fragment.ArrayListViewTestFragment;
+import com.zr.myapplication.ListView.fragment.ListViewCustomFragment;
 
 public class ListViewTabPagerAdapter extends FragmentPagerAdapter {
 
@@ -17,8 +18,17 @@ public class ListViewTabPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        ArrayListViewTestFragment arrayListViewTestFragment = ArrayListViewTestFragment.newInstance();
-        return arrayListViewTestFragment;
+        switch (position) {
+            case 0:
+                ArrayListViewTestFragment arrayListViewTestFragment = ArrayListViewTestFragment.newInstance();
+                return arrayListViewTestFragment;
+            case 1:
+                ListViewCustomFragment listViewCustomFragment = ListViewCustomFragment.newInstance();
+                return listViewCustomFragment;
+            default:
+                ArrayListViewTestFragment defaultFragment = ArrayListViewTestFragment.newInstance();
+                return defaultFragment;
+        }
     }
 
     @Override
