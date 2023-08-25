@@ -8,7 +8,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <ListView
-        android:id="@+id/custom_list_view_test"
+        android:id="@+id/simple_list_view_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@color/transparent_white"
