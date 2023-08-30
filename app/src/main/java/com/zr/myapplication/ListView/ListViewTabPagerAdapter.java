@@ -7,10 +7,11 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.zr.myapplication.ListView.fragment.ArrayListViewTestFragment;
 import com.zr.myapplication.ListView.fragment.ListViewCustomFragment;
 import com.zr.myapplication.ListView.fragment.ListViewSimpleFragment;
+import com.zr.myapplication.ListView.fragment.RecyleListViewFragment;
 
 public class ListViewTabPagerAdapter extends FragmentPagerAdapter {
 
-    private static final int LEARN_FRAGMENT_SIZE = 3;
+    private static final int LEARN_FRAGMENT_SIZE = 4;
 
 
     public ListViewTabPagerAdapter(FragmentManager fm) {
@@ -29,6 +30,9 @@ public class ListViewTabPagerAdapter extends FragmentPagerAdapter {
             case 2:
                 ListViewCustomFragment listViewCustomFragment = ListViewCustomFragment.newInstance();
                 return listViewCustomFragment;
+            case 3:
+                RecyleListViewFragment recyleListViewFragment = RecyleListViewFragment.newInstance();
+                return recyleListViewFragment;
             default:
                 ArrayListViewTestFragment defaultFragment = ArrayListViewTestFragment.newInstance();
                 return defaultFragment;
