@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    android:background="@color/light_blue_A400"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ScrollView
+        android:id="@+id/test_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/test_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginVertical="16dp"
+                android:background="@color/white"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="16dp" />
+
+            <TextView
+                android:id="@+id/click_text_view_in_sv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_view_press"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="text0"
+                android:textSize="25sp"
+                android:clickable="true" />
+
+            <com.zr.myapplication.ListView.myView.MyListView
+                android:id="@+id/lv_in_sv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
+                android:background="@color/white"
+                android:scrollingCache="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="text1"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="text2"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="text3"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="text4"
+                android:textSize="25sp" />
+
+            <com.zr.myapplication.ListView.myView.MyRecyclerView
+                android:id="@+id/rv_in_sv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="16dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

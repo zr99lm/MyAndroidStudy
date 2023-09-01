@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.zr.myapplication.ListView.ListViewTestActivity;
-import com.zr.myapplication.databinding.FragmentFirstBinding;
+import com.zr.myapplication.databinding.FragmentMainBinding;
 
 public class MainFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private FragmentMainBinding binding;
 
     @Override
     public View onCreateView(
@@ -23,7 +23,7 @@ public class MainFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentMainBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }

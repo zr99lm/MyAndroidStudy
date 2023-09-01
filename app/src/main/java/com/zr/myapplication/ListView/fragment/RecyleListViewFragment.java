@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.zr.myapplication.ListView.ItemBean;
@@ -29,8 +31,6 @@ import java.util.Map;
  * create an instance of this fragment.
  */
 public class RecyleListViewFragment extends Fragment {
-
-    private List<Map<String, Object>> mapList;
 
     private SimpleAdapter simpleAdapter;
 
@@ -60,10 +60,13 @@ public class RecyleListViewFragment extends Fragment {
             itemBean.setText((i + 1) + " 条数据");
             itemList.add(itemBean);
         }
+        recyclerView.setAdapter(new MyRecycleAdapter(getContext(), itemList));
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(),2);
+        recyclerView.setLayoutManager(layoutManager);
         return view;
     }
 
-    public class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.MyViewHolder> {
+    public static class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.MyViewHolder> {
         private List<ItemBean> itemBeanList;
         private LayoutInflater myLayoutInflater;
         private Context mContext;
@@ -89,10 +92,9 @@ public class RecyleListViewFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             ItemBean itemBean = itemBeanList.get(position);
-            MyViewHolder myViewHolder = (MyViewHolder) holder;
-            myViewHolder.img.setImageResource(itemBean.getImg());
-            myViewHolder.title.setText(itemBean.getTitle());
-            myViewHolder.text.setText(itemBean.getText());
+            holder.img.setImageResource(itemBean.getImg());
+            holder.title.setText(itemBean.getTitle());
+            holder.text.setText(itemBean.getText());
         }
 
         class MyViewHolder extends RecyclerView.ViewHolder {
@@ -107,5 +109,6 @@ public class RecyleListViewFragment extends Fragment {
                 this.text = itemView.findViewById(R.id.image_text);
             }
         }
+
     }
 }
