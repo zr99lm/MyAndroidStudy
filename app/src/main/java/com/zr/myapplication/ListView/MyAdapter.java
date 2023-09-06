@@ -6,10 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.zr.myapplication.R;
 
 import java.util.List;
+
+import butterknife.InjectView;
 
 public class MyAdapter extends BaseAdapter {
 
@@ -19,7 +22,7 @@ public class MyAdapter extends BaseAdapter {
 
     private Context mContext;
 
-    private MyAdapter(Context context, List<ItemBean> itemBeanList) {
+    public MyAdapter(Context context, List<ItemBean> itemBeanList) {
         this.mContext = context;
         this.itemBeanList = itemBeanList;
         inflater = LayoutInflater.from(mContext);
@@ -44,8 +47,11 @@ public class MyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = inflater.inflate(R.layout.layout_test_simple_list_item, parent, false);
         ImageView image = view.findViewById(R.id.image_view);
-        view.findViewById(R.id.image_title);
-        view.findViewById(R.id.image_text);
-        return null;
+        TextView title = view.findViewById(R.id.image_title);
+        TextView text = view.findViewById(R.id.image_text);
+        image.setImageResource(itemBeanList.get(position).getImg());
+        title.setText(itemBeanList.get(position).getTitle());
+        text.setText(itemBeanList.get(position).getText());
+        return view;
     }
 }

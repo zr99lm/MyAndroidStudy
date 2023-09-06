@@ -18,6 +18,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ListViewSimpleFragment#newInstance} factory method to
@@ -28,6 +31,9 @@ public class ListViewSimpleFragment extends Fragment {
     private List<Map<String, Object>> mapList;
 
     private SimpleAdapter simpleAdapter;
+
+    @InjectView(R.id.simple_list_view_test)
+    ListView listView;
 
     public ListViewSimpleFragment() {
         // Required empty public constructor
@@ -46,7 +52,7 @@ public class ListViewSimpleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_view_simple, container, false);
-        ListView listView = view.findViewById(R.id.simple_list_view_test);
+        ButterKnife.inject(this,view);
         mapList = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
             Map<String, Object> map = new HashMap<String, Object>();

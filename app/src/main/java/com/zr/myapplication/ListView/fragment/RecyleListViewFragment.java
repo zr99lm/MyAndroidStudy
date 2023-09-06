@@ -25,6 +25,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link RecyleListViewFragment#newInstance} factory method to
@@ -33,6 +36,9 @@ import java.util.Map;
 public class RecyleListViewFragment extends Fragment {
 
     private SimpleAdapter simpleAdapter;
+
+    @InjectView(R.id.recycle_list_view_test)
+    RecyclerView recyclerView;
 
     public RecyleListViewFragment() {
         // Required empty public constructor
@@ -51,7 +57,7 @@ public class RecyleListViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_view_recycle, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.recycle_list_view_test);
+        ButterKnife.inject(this,view);
         List<ItemBean> itemList = new ArrayList<ItemBean>();
         for (int i = 0; i < 50; i++) {
             ItemBean itemBean = new ItemBean();

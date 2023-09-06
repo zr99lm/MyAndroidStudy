@@ -16,9 +16,12 @@ import com.zr.myapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 public class ArrayListViewTestFragment extends Fragment {
 
+    @InjectView(R.id.array_list_view_test)
     ListView listView;
 
     private List<String> mStringList;
@@ -44,14 +47,14 @@ public class ArrayListViewTestFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_array_list_view_test, container, false);
-        ListView arrayListView = view.findViewById(R.id.array_list_view_test);
+        ButterKnife.inject(this, view);
         initData();
         arrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, mStringList);
-        arrayListView.setAdapter(arrayAdapter);
-        arrayListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setAdapter(arrayAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(),"点击了"+position,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "点击了" + position, Toast.LENGTH_SHORT).show();
             }
         });
         return view;

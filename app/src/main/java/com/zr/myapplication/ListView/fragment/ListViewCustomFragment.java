@@ -9,12 +9,18 @@ import android.widget.SimpleAdapter;
 
 import androidx.fragment.app.Fragment;
 
+import com.zr.myapplication.ListView.ItemBean;
+import com.zr.myapplication.ListView.MyAdapter;
+import com.zr.myapplication.ListView.myView.MyListView;
 import com.zr.myapplication.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,9 +29,12 @@ import java.util.Map;
  */
 public class ListViewCustomFragment extends Fragment {
 
-    private List<Map<String, Object>> mapList;
+    private List<ItemBean> itemBeanList;
 
     private SimpleAdapter simpleAdapter;
+
+    @InjectView(R.id.simple_list_view_test)
+    MyListView listView;
 
     public ListViewCustomFragment() {
         // Required empty public constructor
@@ -44,17 +53,13 @@ public class ListViewCustomFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_view_simple, container, false);
-        ListView listView = view.findViewById(R.id.simple_list_view_test);
-//        mapList = new ArrayList<>();
+//        ButterKnife.inject(this, view);
+//        itemBeanList = new ArrayList<>();
 //        for (int i = 0; i < 50; i++) {
-//            Map<String, Object> map = new HashMap<String, Object>();
-//            map.put("img", R.mipmap.ic_launcher);
-//            map.put("text", "这是第 " + (i + 1) + " 条数据");
-//            mapList.add(map);
+//            itemBeanList.add(new ItemBean(R.mipmap.ic_launcher, (i + 1) + "title", (i + 1) + "数据"));
 //        }
-//        simpleAdapter = new SimpleAdapter(getActivity(), mapList, R.layout.layout_test_simple_list_item, new String[]{"img", "text"}, new int[]{R.id.image_view, R.id.image_text}
-//        );
-//        listView.setAdapter(simpleAdapter);
+//        MyAdapter myAdapter = new MyAdapter(getContext(), itemBeanList);
+//        listView.setAdapter(myAdapter);
         return view;
     }
 }
